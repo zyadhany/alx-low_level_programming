@@ -18,6 +18,6 @@ int main(void)
 	}
 
 
-	printf("%d", summ);
+	printf("%d\n", summ);
 return (0);
 }
