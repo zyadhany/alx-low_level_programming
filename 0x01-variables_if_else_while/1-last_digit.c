@@ -14,7 +14,7 @@ int n;
 
 srand(time(0));
 n = rand() - RAND_MAX / 2;
-n %= 5;
+n %= 10;
 
 printf("%d and is ", n);
 
