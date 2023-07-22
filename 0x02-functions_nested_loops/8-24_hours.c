@@ -3,7 +3,7 @@
 #include "main.h"
 
 /**
- * print_last_digit - start
+ * jack_bauer - start
  * Return:0
 */
 
