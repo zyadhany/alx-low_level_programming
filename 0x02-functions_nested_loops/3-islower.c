@@ -6,6 +6,7 @@
 
 /**
  * _islower - start
+ * @c: the input char
  * Return:0
 */
 
