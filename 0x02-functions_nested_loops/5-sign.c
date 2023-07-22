@@ -3,17 +3,21 @@
 #include "main.h"
 
 /**
- * print_alphabet - start
+ * _isalpha - start
+ * @n: the input to be cheaked
  * Return:0
 */
 
-void print_alphabet(void)
+int print_sign(int n)
 {
-char a;
-	for (a = 'a'; a <= 'z'; a++)
+	if (n > 0)
 	{
-		putchar(a);
+		return (1);
+	} else if (n == 0)
+	{
+		return (0);
 	}
-	putchar('\n');
+
+return (-1);
 }
 

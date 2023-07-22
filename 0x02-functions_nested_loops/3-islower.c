@@ -5,7 +5,7 @@
 #include <ctype.h>
 
 /**
- * _islower - start
+ * _isalpha - start
  * @c: the input char
  * Return:0
 */
