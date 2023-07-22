@@ -1,19 +1,15 @@
 #include <stdio.h>
 #include <math.h>
 #include "main.h"
+#include <string.h>
+#include <ctype.h>
 
 /**
- * print_alphabet - start
+ * _islower - start
  * Return:0
 */
 
-void print_alphabet(void)
+int _islower(int c)
 {
-char a;
-	for (a = 'a'; a <= 'z'; a++)
-	{
-		putchar(a);
-	}
-	putchar('\n');
+	return (islower(c));
 }
-
