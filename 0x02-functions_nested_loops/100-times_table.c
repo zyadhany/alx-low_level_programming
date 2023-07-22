@@ -20,7 +20,7 @@ void print_times_table(int n)
 			int x = i * j, k = 10000;
 
 			putchar(',');
-			while (k > x)
+			while (k > x + (x == 0))
 			{
 				putchar(' ');
 				k /= 10;
