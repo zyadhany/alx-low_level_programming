@@ -15,7 +15,7 @@ void jack_bauer(void)
 	{
 		if (a == '2')
 		{
-			f = '4';
+			f = '3';
 		}
 
 		for (b = '0'; b <= f; b++)
