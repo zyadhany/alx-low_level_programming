@@ -10,15 +10,17 @@
 int main(void)
 {
 
-int a, b, c, d;
+int a, b, c, d, f;
 for (a = '0'; a <= '9'; a++)
 {
 for (b = a; b <= '9'; b++)
 {
+f = 1;
 for (c = a; c <= '9'; c++)
 {
-for (d = b + 1; d <= '9'; d++)
+for (d = b + f; d <= '9'; d++)
 {
+f = 0;
 putchar(a);
 putchar(b);
 putchar(' ');
