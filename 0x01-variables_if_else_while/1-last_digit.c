@@ -10,13 +10,13 @@
 int main(void)
 {
 
-int n;
+int n, k;
 
 srand(time(0));
-n = rand() - RAND_MAX / 2;
-n %= 10;
+k = rand() - RAND_MAX / 2;
+n = k % 10;
 
-printf("%d and is ", n);
+printf("Last digit of %d is %d and is ", k, n);
 
 if (n > 5)
 {
