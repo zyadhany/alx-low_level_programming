@@ -10,14 +10,16 @@
 int main(void)
 {
 
-int a, b, c, d, f;
+int a, b, c, d, f, g;
 for (a = '0'; a <= '9'; a++)
 {
+g = a;
 for (b = '0'; b <= '9'; b++)
 {
 f = 1 + b;
-for (c = a; c <= '9'; c++)
+for (c = g; c <= '9'; c++)
 {
+g = '0';
 for (d = f; d <= '9'; d++)
 {
 f = '0';
