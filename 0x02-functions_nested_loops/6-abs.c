@@ -3,17 +3,12 @@
 #include "main.h"
 
 /**
- * print_alphabet - start
+ * _abs - start
+ * @n: the input to be cheaked
  * Return:0
 */
 
-void print_alphabet(void)
+int _abs(int n)
 {
-char a;
-	for (a = 'a'; a <= 'z'; a++)
-	{
-		putchar(a);
-	}
-	putchar('\n');
+	return (abs(n));
 }
-

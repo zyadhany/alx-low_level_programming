@@ -3,7 +3,7 @@
 #include "main.h"
 
 /**
- * _isalpha - start
+ * print_sign - start
  * @n: the input to be cheaked
  * Return:0
 */
