@@ -3,16 +3,16 @@
 #include "main.h"
 
 /**
- * main - start
+ * print_alphabet - start
  * Return:0
 */
 
-void print_alphabet(void){
-char a;
-for (a = 'a'; a <= 'z'; a++)
+void print_alphabet(void)
 {
-putchar(a);
+char a;
+	for (a = 'a'; a <= 'z'; a++)
+	{
+		putchar(a);
+	}
+	putchar('\n');
 }
-putchar('\n');
-}
-
