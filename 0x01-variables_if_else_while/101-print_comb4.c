@@ -20,7 +20,7 @@ for (c = b + 1; c <= '9'; c++)
 putchar(a);
 putchar(b);
 putchar(c);
-if(a != '7' || b != '8' || c != '9')
+if (a != '7' || b != '8' || c != '9')
 {
 putchar(',');
 putchar(' ');
