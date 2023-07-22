@@ -3,7 +3,7 @@
 #include "main.h"
 
 /**
- * int print_last_digit(int); - start
+ * print_last_digit - start
  * @n: the input to be cheaked
  * Return:0
 */
