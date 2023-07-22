@@ -4,15 +4,17 @@
 
 /**
  * print_last_digit - start
- * @k: the input to be cheaked
+ * @n: the input to be cheaked
  * Return:0
 */
 
-int print_last_digit(int k)
+int print_last_digit(int n)
 {
-	long long int n = k;
+	if (n < 0)
+	{
+		n *= -1;
+	}
 
-	n = (n + -2 * n * (n < 0));
 	_putchar('0' + n % 10);
 	return (n % 10);
 }
