@@ -18,7 +18,7 @@ void print_times_table(int n)
 		for (j = 1; j <= n; j++)
 		{
 			int x = i * j, k = 10000;
-			
+
 			putchar(',');
 			while (k > x)
 			{
