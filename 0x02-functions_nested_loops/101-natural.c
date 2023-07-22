@@ -19,4 +19,5 @@ int main(void)
 
 
 	printf("%d", summ);
+return (0);
 }
