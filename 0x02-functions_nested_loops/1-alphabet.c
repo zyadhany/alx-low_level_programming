@@ -9,12 +9,7 @@
 
 int main(void)
 {
-char a;
-for (a = 'a'; a <= 'z'; a++)
-{
-putchar(a);
-}
-putchar('\n');
+print_alphabet();
 return (0);
 }
 
