@@ -1,12 +1,9 @@
-#include <stdio.h>
-#include <math.h>
 
-
-void print_alphabet(){
+print_alphabet(){
 char a;
 for (a = 'a'; a <= 'z'; a++)
 {
-_putchar(a);
+putchar(a);
 }
-_putchar('\n');
+putchar('\n');
 }

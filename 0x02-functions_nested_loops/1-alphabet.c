@@ -1,17 +1,15 @@
+#include <stdio.h>
+#include <math.h>
 #include "main.h"
 
 /**
- * print_alphabet - Entry point
+ * main - start
  * Return:0
- */
+*/
 
-void print_alphabet(void)
+int main(void)
 {
-char c = 'a';
-while (c <= 'z')
-{
-putchar(c);
-c++;
+print_alphabet();
+return (0);
 }
-putchar('\n');
-}
+
