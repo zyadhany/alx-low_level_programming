@@ -15,12 +15,12 @@ for (a = '0'; a <= '9'; a++)
 {
 for (b = '0'; b <= '9'; b++)
 {
-f = 1;
+f = 1 + b;
 for (c = a; c <= '9'; c++)
 {
-for (d = b + f; d <= '9'; d++)
+for (d = f; d <= '9'; d++)
 {
-f = 0;
+f = '0';
 putchar(a);
 putchar(b);
 putchar(' ');
