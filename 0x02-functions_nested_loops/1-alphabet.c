@@ -7,9 +7,12 @@
  * Return:0
 */
 
-int main(void)
+void print_alphabet(void){
+char a;
+for (a = 'a'; a <= 'z'; a++)
 {
-print_alphabet();
-return (0);
+putchar(a);
+}
+putchar('\n');
 }
 
