@@ -6,6 +6,7 @@
 
 /**
  * _isalpha - start
+ * @c: the input char
  * Return:0
 */
 
