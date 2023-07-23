@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <math.h>
-#include "main.h"
 #include <string.h>
 #include <ctype.h>
 
@@ -11,7 +10,7 @@
 
 int main(void)
 {
-	long long int i, j, mx = 0, n = 612852475143;
+	long int i, j, mx = 0, n = 612852475143;
 
 	for (i = 2; i * i <= n; i++)
 	{
