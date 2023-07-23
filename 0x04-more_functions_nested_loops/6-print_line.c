@@ -10,11 +10,11 @@
  * Return:0
 */
 
-print_line(int c)
+void print_line(int n)
 {
 	int i;
 
-	for (i = 0; i < c; i++)
+	for (i = 0; i < n; i++)
 	{
 		_putchar('_');
 	}
