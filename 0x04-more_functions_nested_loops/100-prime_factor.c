@@ -8,7 +8,7 @@
  */
 int main(void)
 {
-	long int i, j, mx = 0, n = 612852475143;
+	long int i, mx = 0, n = 612852475143;
 
 	for (i = 2; i * i <= n; i++)
 	{
