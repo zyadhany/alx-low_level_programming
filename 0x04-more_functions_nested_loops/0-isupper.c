@@ -12,5 +12,5 @@
 
 int _isupper(int c)
 {
-	return (c <= 'z');
+	return (c <= 'Z');
 }
