@@ -11,11 +11,11 @@
 
 int main(void)
 {
-	long int i, j, mx = 0, n = 612852475143;
+	long int i, j, mx = 0, n = 1231952;
 
 	for (i = 2; i * i <= n; i++)
 	{
-		if (n % i == 0)
+		while (n % i == 0)
 		{
 			n /= i;
 			mx = i;
