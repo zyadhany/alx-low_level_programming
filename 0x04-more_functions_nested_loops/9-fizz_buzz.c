@@ -12,7 +12,7 @@ int main(void)
 	int i, j;
 
 	putchar('1');
-	for (i = 1; i <= 100; i++)
+	for (i = 2; i <= 100; i++)
 	{
 		j = 1;
 		putchar(' ');
