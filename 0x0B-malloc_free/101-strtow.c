@@ -22,7 +22,7 @@ char **strtow(char *str)
 		if (str[i] == ' ' && str[i + 1] != ' ')
 			w++;
 	}
-	arr = malloc(w * sizeof(char *));
+	arr = malloc((w + 1) * sizeof(char *));
 	if (arr == NULL)
 		return (NULL);
 	for (i = 0; str[i] != '\0'; i++)
@@ -48,5 +48,6 @@ char **strtow(char *str)
 			k++;
 		}
 	}
+	arr[w] = NULL;
 	return (arr);
 }
