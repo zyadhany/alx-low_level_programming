@@ -30,7 +30,7 @@ char **strtow(char *str)
 		re = 0;
 		if (str[i] != ' ')
 		{
-			for (j = wordf ; str[j] != '\0' && str[i] != ' '; j++)
+			for (j = i ; str[j] != '\0' && str[i] != ' '; j++)
 			{
 				re++;
 			}
