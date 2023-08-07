@@ -13,6 +13,7 @@ char *str_concat(char *s1, char *s2)
 {
 
 	int i, n = 0, m = 0;
+	char *arr = NULL;
 
 	if (s1)
 	{
@@ -24,7 +25,7 @@ char *str_concat(char *s1, char *s2)
 		m = strlen(s2);
 	}
 
-	char *arr = malloc(sizeof(char) * (n + m + 1));
+	arr = malloc(sizeof(char) * (n + m + 1));
 
 	if (arr)
 	{
