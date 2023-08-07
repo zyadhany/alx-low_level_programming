@@ -4,7 +4,7 @@
 #include <string.h>
 
 /**
- * alloc_grid - Entry point
+ * free_grid - Entry point
  *@arr: input grid
  *@n: input height
  * Return: a pointer to the array, or NULL if it fails
