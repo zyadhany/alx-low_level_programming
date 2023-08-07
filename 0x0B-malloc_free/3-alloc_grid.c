@@ -33,9 +33,13 @@ int **alloc_grid(int m, int n)
 
 		if (!arr[i])
 		{
+			for (j = 0; j < m; j++)
+			{
+				free(arr[j]);
+			}
+			free(arr);
 			return (NULL);
 		}
-
 
 		for (j = 0; j < m; j++)
 		{
