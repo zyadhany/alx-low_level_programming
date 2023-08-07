@@ -20,7 +20,7 @@ char *_strdup(char *str)
 			arr[i] = str[i];
 		}
 	}
-	if (arr == NULL || !n)
+	if (arr == NULL)
 	{
 		printf("failed to allocate memory\n");
 	}
