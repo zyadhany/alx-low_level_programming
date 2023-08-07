@@ -13,7 +13,6 @@ char **strtow(char *str)
 {
 	int i, w = 1, j, k = 0, h, re, m, wordf;
 	char **arr;
-	char *x;
 
 	if (*str == '\0' || str == NULL)
 		return (NULL);
