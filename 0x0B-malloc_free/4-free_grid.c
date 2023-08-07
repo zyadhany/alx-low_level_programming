@@ -14,12 +14,11 @@ void free_grid(int **arr, int n)
 {
 	int j;
 
-	if (!arr)
+
+	for (j = 0; j < n; j++)
 	{
-		for (j = 0; j < n; j++)
-		{
-			free(arr[j]);
-		}
-		free(arr);
+		free(arr[j]);
 	}
+	free(arr);
+
 }
