@@ -10,25 +10,25 @@
  */
 char *_strdup(char *str)
 {
-	if (str == NULL)
+	if (str)
 	{
-		return (NULL);
-	}
+		int i, n = strlen(str);
+		char *arr = malloc(sizeof(char) * n);
 
-	int i, n = strlen(str);
-	char *arr = malloc(sizeof(char) * n);
-
-	if (arr)
-	{
-		for (i = 0; i < n; i++)
+		if (arr)
 		{
-			arr[i] = str[i];
+			for (i = 0; i < n; i++)
+			{
+				arr[i] = str[i];
+			}
 		}
-	}
-	if (arr == NULL)
-	{
-		printf("failed to allocate memory\n");
+		if (arr == NULL)
+		{
+			printf("failed to allocate memory\n");
 	}
 
 	return (arr);
+	}
+
+	return (NULL);
 }
