@@ -20,5 +20,10 @@ char *create_array(unsigned int size, char c)
 			arr[i] = c;
 		}
 	}
+	else
+	{
+		printf("failed to allocate memory\n");
+	}
+
 	return (arr);
 }
