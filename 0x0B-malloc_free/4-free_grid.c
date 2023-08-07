@@ -21,9 +21,5 @@ void free_grid(int **arr, int n)
 			free(arr[j]);
 		}
 		free(arr);
-		return (NULL);
 	}
-
-
-	return (arr);
 }
