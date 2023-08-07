@@ -10,6 +10,11 @@
  */
 char *_strdup(char *str)
 {
+	if (str == NULL)
+	{
+		return (NULL);
+	}
+
 	int i, n = strlen(str);
 	char *arr = malloc(sizeof(char) * n);
 
