@@ -25,5 +25,11 @@ int **alloc_grid(int m, int n)
 		}
 	}
 
+	if (!n || !m)
+	{
+		return (NULL);
+	}
+
+
 	return (arr);
 }
