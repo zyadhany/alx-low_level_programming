@@ -14,6 +14,12 @@ int **alloc_grid(int m, int n)
 {
 	int **arr, i, j;
 
+	if (!n || !m)
+	{
+		return (NULL);
+	}
+
+
 	arr = malloc(sizeof(int *) * n);
 
 	if (!arr)
