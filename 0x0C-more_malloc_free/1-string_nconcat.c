@@ -34,7 +34,7 @@ int sizee(char *s)
 
 char *string_nconcat(char *s1, char *s2, unsigned int k)
 {
-	int n, m, i, at;
+	int n, m, i, at = 0;
 	char *s;
 
 	n = sizee(s1);
