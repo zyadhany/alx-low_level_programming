@@ -2,11 +2,11 @@
 #include "dog.h"
 
 /**
- * init_dog - intery
+ * print_dog - intery
  * @d: dog
  */
 
-void init_dog(struct dog *d)
+void print_dog(struct dog *d)
 {
 	if (d)
 	{
