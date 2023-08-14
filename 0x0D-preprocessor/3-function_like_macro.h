@@ -1,6 +1,6 @@
 #ifndef pi
 #define pi
 
-#define ABS(x) (x * (1 - 2 * (x < 0)))
+#define ABS(x) (((x) < (0)) ? ((x) * (-1)) : (x))
 
 #endif
