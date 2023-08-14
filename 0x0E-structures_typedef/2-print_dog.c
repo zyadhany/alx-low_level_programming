@@ -3,13 +3,10 @@
 
 /**
  * init_dog - intery
- * @d: d
- * @name: name
- * @age: age
- * @owner: owner
+ * @d: dog
  */
 
-void init_dog(struct dog *d, char *name, float age, char *owner)
+void init_dog(struct dog *d)
 {
 	if (d)
 	{
