@@ -4,7 +4,7 @@
 #include "lists.h"
 
 /**
- * print_listint - check the code
+ * sum_listint - check the code
  * @X: given list
  *
  * Return: size of list.
@@ -12,13 +12,11 @@
 
 int sum_listint(listint_t *X)
 {
-
 	int n = 0;
 
 	while (X)
 	{
-		printf("%d\n", X->n);
-		n++;
+		n += X->n;
 		X = X->next;
 	}
 
