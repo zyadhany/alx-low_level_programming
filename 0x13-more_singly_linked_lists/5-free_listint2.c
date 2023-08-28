@@ -30,4 +30,5 @@ void free_listint22(listint_t *X)
 void free_listint2(listint_t **X)
 {
 	free_listint22(*X);
+	*X = NULL;
 }
