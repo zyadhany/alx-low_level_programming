@@ -13,9 +13,14 @@
 
 void free_listint2(listint_t **X)
 {
-	if(X)
+	listint_t *tmp;
+	
+	if(*X)
 	{
+		tmp = (*X)->next;
 		free(*X);
+		*X = tmp;
+		free_listint2(X);
 	}
 	*X = NULL;
 }
