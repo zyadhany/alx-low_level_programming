@@ -14,7 +14,7 @@
 listint_t *get_nodeint_at_index(listint_t *X, unsigned int k)
 {
 
-	int i = 0;
+	unsigned int i = 0;
 
 	for (i = 0; i <= k; i++)
 	{

@@ -10,7 +10,7 @@
  * Return: size of list.
  */
 
-size_t print_listint(const listint_t *X)
+int sum_listint(listint_t *X)
 {
 
 	int n = 0;
