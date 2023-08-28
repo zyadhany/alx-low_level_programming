@@ -13,5 +13,5 @@
 int pop_listint(listint_t **X)
 {
 	free_listint(*X);
-	free(X);
+	return (1);
 }
