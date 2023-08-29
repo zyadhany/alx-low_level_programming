@@ -25,7 +25,6 @@ size_t free_listint_safe(listint_t **X)
 		free(*X);
 		n++;
 		*X = tmp;
-		free_listint2(X);
 	}
 
 	*X = NULL;
