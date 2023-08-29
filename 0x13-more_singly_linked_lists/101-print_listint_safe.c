@@ -13,13 +13,16 @@
 size_t print_listint_safe(const listint_t *X)
 {
 	int n = 0, at = 0, keep = 0, i;
-
+	listint_t *Y[1024];
 	while (X)
 	{
-
 		for ( i = 0; i < at; i++)
 		{
-			
+			if (Y[i] == X->next)
+			{
+				keep = 1;
+				break;
+			}
 			
 		}
 		
@@ -27,7 +30,7 @@ size_t print_listint_safe(const listint_t *X)
 			break;
 		printf("%d\n", X->n);
 		n++;
-
+		Y[at] = X->next;
 		at++;
 		X = X->next;
 	}
