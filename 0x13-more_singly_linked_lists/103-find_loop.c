@@ -20,7 +20,7 @@ listint_t *find_listint_loop(listint_t *X)
 	{
 		n++;
 		X = X->next;
-		if (n == 2000)
+		if (n == 5000)
 			return (X);
 	}
 
