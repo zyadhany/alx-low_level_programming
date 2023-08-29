@@ -14,17 +14,20 @@
 size_t free_listint_safe(listint_t **X)
 {
 	listint_t *tmp;
+	int n = 0;
 
 	if (!X)
-		return;
+		return (n);
 
 	if (*X)
 	{
 		tmp = (*X)->next;
 		free(*X);
+		n++;
 		*X = tmp;
 		free_listint2(X);
 	}
 
 	*X = NULL;
+	return (n);
 }
