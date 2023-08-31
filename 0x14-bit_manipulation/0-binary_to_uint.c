@@ -18,6 +18,8 @@ unsigned int binary_to_uint(const char *s)
 
 	while (s[n] != '\0')
 	{
+		if (s[n] != '0' && s[n] != '1')
+			return (0);
 		n++;
 	}
 
