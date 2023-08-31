@@ -40,8 +40,10 @@ int clear_bit(unsigned long int *n, unsigned int k)
 	{
 		return (-1);
 	}
-
-	*n -= _pow1(2, k);
+	if ((*n >> k) & 1)
+	{
+		*n -= _pow1(2, k);
+	}
 
 	return (1);
 }
