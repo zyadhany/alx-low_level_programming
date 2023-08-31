@@ -6,6 +6,27 @@
 
 
 /**
+ * _pow - check the code
+ * @n: num1
+ * @k: power num
+ *
+ * Return: n power to k
+ */
+
+unsigned int _pow(unsigned int n, unsigned int k)
+{
+	unsigned int i = 0, re = 1;
+
+	for (i = 0; i < k; i++)
+	{
+		re *= n;
+	}
+
+
+	return (re);
+}
+
+/**
  * binary_to_uint - check the code
  * @s: given binary
  *
@@ -14,7 +35,7 @@
 
 unsigned int binary_to_uint(const char *s)
 {
-	unsigned int k = 0, i = 0, n = 0, re, j;
+	unsigned int k = 0, i = 0, n = 0;
 
 	if (!s)
 	{
@@ -34,12 +55,7 @@ unsigned int binary_to_uint(const char *s)
 	{
 		if (s[i] == '1')
 		{
-			re = 1;
-			for (j = 0; j < n - i - 1; j++)
-			{
-				re *= 2;
-			}
-			k += re;
+			k += _pow(2,n - i - 1);
 		}
 
 		i++;

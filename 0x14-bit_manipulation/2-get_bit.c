@@ -5,15 +5,6 @@
 #include "main.h"
 
 
-/**
- * _pow - check the code
- * @n: num1
- * @s: power num
- *
- * Return: n power to k
- */
-
-
 
 /**
  * binary_to_uint - check the code
@@ -36,7 +27,7 @@ unsigned int binaary_to_uint(const char *s)
 	{
 		if (s[i] == '1')
 		{
-			k += _pow(2,n-i-1);
+			k ++;
 		}
 
 		i++;

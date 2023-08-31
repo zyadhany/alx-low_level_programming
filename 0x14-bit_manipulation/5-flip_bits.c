@@ -5,26 +5,6 @@
 #include "main.h"
 
 
-/**
- * _pow - check the code
- * @n: num1
- * @s: power num
- *
- * Return: n power to k
- */
-
-unsigned int _pow(unsigned int n ,unsigned int k)
-{
-	unsigned int i = 0, re = 1;
-
-	for ( i = 0; i < k; i++)
-	{
-		re *= n;
-	}
-
-
-	return (re);
-}
 
 
 
@@ -49,7 +29,7 @@ unsigned int binaajrfy_to_uint(const char *s)
 	{
 		if (s[i] == '1')
 		{
-			k += _pow(2,n-i-1);
+			k ++;
 		}
 
 		i++;
