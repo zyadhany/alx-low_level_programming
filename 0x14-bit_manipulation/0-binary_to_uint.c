@@ -27,11 +27,11 @@ unsigned int binary_to_uint(const char *s)
 		if (s[i] == '1')
 		{
 			re = 1;
-			for ( j = 0; j < n - i - 1; j++)
+			for (j = 0; j < n - i - 1; j++)
 			{
 				re *= 2;
 			}
-			k+= re;
+			k += re;
 		}
 
 		i++;
