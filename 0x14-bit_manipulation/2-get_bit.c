@@ -16,20 +16,8 @@
 
 int get_bit(unsigned long int n, unsigned int k)
 {
-	unsigned long int i = 0, g = n;
 
-	if (n == 0)
-	{
-		i = 1;
-	}
-
-	while (g)
-	{
-		g >>= 1;
-		i++;
-	}
-
-	if (i <= k)
+	if (k > 64)
 	{
 		return (-1);
 	}
