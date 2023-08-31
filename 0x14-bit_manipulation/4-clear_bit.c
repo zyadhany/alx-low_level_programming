@@ -5,14 +5,14 @@
 #include "main.h"
 
 /**
- * _pow1 - check the code
+ * _pow2 - check the code
  * @n: num1
  * @k: power num
  *
  * Return: n power to k
  */
 
-unsigned long int _pow1(unsigned long int n, unsigned long int k)
+unsigned long int _pow2(unsigned long int n, unsigned long int k)
 {
 	unsigned int i = 0, re = 1;
 
@@ -42,7 +42,7 @@ int clear_bit(unsigned long int *n, unsigned int k)
 	}
 	if ((*n >> k) & 1)
 	{
-		*n -= _pow1(2, k);
+		*n -= _pow2(2, k);
 	}
 
 	return (1);

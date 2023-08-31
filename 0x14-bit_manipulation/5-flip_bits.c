@@ -4,37 +4,25 @@
 #include <math.h>
 #include "main.h"
 
-
-
-
-
 /**
- * binary_to_uint - check the code
- * @s: given binary
+ * flip_bits - check the code
+ * @n: given binary
+ * @k: given index
  *
  * Return: pointer to list
  */
 
-unsigned int binaajrfy_to_uint(const char *s)
+unsigned int flip_bits(unsigned long int n, unsigned long int k)
 {
-	unsigned int k = 0, i = 0, n = 0;
 
-	while (s[n] != '\0')
+	if (k > 64)
 	{
-		n++;
+		return (-1);
+	}
+	if ((n >> k) & 1)
+	{
+		n -= 3;
 	}
 
-
-	while (s[i] != '\0')
-	{
-		if (s[i] == '1')
-		{
-			k ++;
-		}
-
-		i++;
-	}
-
-
-	return (k);
+	return (1);
 }
