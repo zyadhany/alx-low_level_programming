@@ -18,14 +18,13 @@ unsigned int flip_bits(unsigned long int n, unsigned long int m)
 
 	while (n || m)
 	{
-		if (n & 1 != m & 1)
+		if ((n & 1) != (m & 1))
 		{
 			re++;
 		}
 		n >>= 1;
 		m >>= 1;
 	}
-
 
 
 	return (re);
