@@ -16,6 +16,12 @@ unsigned int binary_to_uint(const char *s)
 {
 	unsigned int k = 0, i = 0, n = 0, re, j;
 
+	if (!s)
+	{
+		return (0);
+	}
+
+
 	while (s[n] != '\0')
 	{
 		if (s[n] != '0' && s[n] != '1')
