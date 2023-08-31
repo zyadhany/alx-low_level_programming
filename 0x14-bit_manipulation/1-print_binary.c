@@ -18,6 +18,12 @@ void print_binary(unsigned long int k)
 	int i, n = 0;
 	char s[64];
 
+	if (k == 0)
+	{
+		_putchar('0');
+		return;
+	}
+
 	while (k)
 	{
 		if (k % 2)
