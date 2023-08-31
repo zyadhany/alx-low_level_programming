@@ -16,7 +16,7 @@
 
 int get_bit(unsigned long int n, unsigned int k)
 {
-	unsigned int i = 0, g = n;
+	unsigned long int i = 0, g = n;
 
 	if (n == 0)
 	{
