@@ -23,11 +23,10 @@ int get_bit(unsigned long int n, unsigned int k)
 		i = 1;
 	}
 
-
 	while (g)
 	{
+		g >>= 1;
 		i++;
-		g /= 2;
 	}
 
 	if (i <= k)
