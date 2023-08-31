@@ -4,37 +4,44 @@
 #include <math.h>
 #include "main.h"
 
+/**
+ * _pow1 - check the code
+ * @n: num1
+ * @k: power num
+ *
+ * Return: n power to k
+ */
+
+unsigned long int _pow1(unsigned long int n, unsigned long int k)
+{
+	unsigned int i = 0, re = 1;
+
+	for (i = 0; i < k; i++)
+	{
+		re *= n;
+	}
 
 
-
+	return (re);
+}
 
 /**
- * binary_to_uint - check the code
- * @s: given binary
+ * clear_bit - check the code
+ * @n: given binary
+ * @k: given index
  *
  * Return: pointer to list
  */
 
-unsigned int binardy_to_uint(const char *s)
+int clear_bit(unsigned long int *n, unsigned int k)
 {
-	unsigned int k = 0, i = 0, n = 0;
 
-	while (s[n] != '\0')
+	if (k > 64)
 	{
-		n++;
+		return (-1);
 	}
 
+	*n -= _pow1(2, k);
 
-	while (s[i] != '\0')
-	{
-		if (s[i] == '1')
-		{
-			k ++;
-		}
-
-		i++;
-	}
-
-
-	return (k);
+	return (1);
 }
