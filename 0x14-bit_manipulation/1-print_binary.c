@@ -34,7 +34,8 @@ unsigned long int _pow1(unsigned long int n, unsigned long int k)
 
 void print_binary(unsigned long int k)
 {
-	unsigned long int i = 0, n = 31;
+	unsigned long int n = k;
+	int re = -1;
 
 	if (k == 0)
 	{
@@ -44,29 +45,21 @@ void print_binary(unsigned long int k)
 
 	while (k)
 	{
+		k >>= 1;
+		re++;
+	}
 
-		if (_pow1(2, n) <= k)
+	while (re >= 0)
+	{
+		if ((n >> re) & 1)
 		{
-			k -= _pow1(2, n);
-			i = 1;
 			putchar('1');
-
-			if (!k)
-			{
-				for (i = 0; i < n; i++)
-				{
-					putchar('0');
-				}
-				return;
-			}
-
-
-		} else if (i)
+		}
+		else
 		{
 			putchar('0');
 		}
 
-		n--;
+		re--;
 	}
-
 }

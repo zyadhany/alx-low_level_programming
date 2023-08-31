@@ -7,32 +7,30 @@
 
 
 /**
- * binary_to_uint - check the code
- * @s: given binary
+ * get_bit - check the code
+ * @n: given binary
+ * @k: given index
  *
  * Return: pointer to list
  */
 
-unsigned int binaary_to_uint(const char *s)
+int get_bit(unsigned long int n, unsigned int k)
 {
-	unsigned int k = 0, i = 0, n = 0;
+	unsigned int i = 0;
 
-	while (s[n] != '\0')
+	while (n && i < k)
 	{
-		n++;
-	}
 
-
-	while (s[i] != '\0')
-	{
-		if (s[i] == '1')
-		{
-			k ++;
-		}
 
 		i++;
+		n /= 2;
 	}
 
+	if (i == k)
+	{
+		return (n % 2);
+	}
+	
 
-	return (k);
+	return (-1);
 }
