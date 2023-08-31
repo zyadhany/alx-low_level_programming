@@ -18,6 +18,12 @@ int get_bit(unsigned long int n, unsigned int k)
 {
 	unsigned int i = 0;
 
+	if (n == 0 && k == 0)
+	{
+		return (0);
+	}
+
+
 	while (n && i < k)
 	{
 
@@ -26,7 +32,7 @@ int get_bit(unsigned long int n, unsigned int k)
 		n /= 2;
 	}
 
-	if (i == k)
+	if (i == k && n)
 	{
 		return (n % 2);
 	}
