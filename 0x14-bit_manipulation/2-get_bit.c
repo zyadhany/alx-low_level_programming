@@ -30,7 +30,7 @@ int get_bit(unsigned long int n, unsigned int k)
 	{
 		return (n % 2);
 	}
-	
+
 
 	return (-1);
 }
