@@ -16,27 +16,24 @@
 
 int get_bit(unsigned long int n, unsigned int k)
 {
-	unsigned int i = 0;
+	unsigned int i = 0, g = n;
 
-	if (n == 0 && k == 0)
+	if (n == 0)
 	{
-		return (0);
+		i = 1;
 	}
 
 
-	while (n && i < k)
+	while (g)
 	{
-
-
 		i++;
-		n /= 2;
+		g /= 2;
 	}
 
-	if (i == k && n)
+	if (i <= k)
 	{
-		return (n % 2);
+		return (-1);
 	}
 
-
-	return (-1);
+	return ((n >> k) & 1);
 }
