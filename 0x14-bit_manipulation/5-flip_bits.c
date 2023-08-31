@@ -35,7 +35,7 @@ unsigned int _pow(unsigned int n ,unsigned int k)
  * Return: pointer to list
  */
 
-unsigned int binary_to_uint(const char *s)
+unsigned int binaajrfy_to_uint(const char *s)
 {
 	unsigned int k = 0, i = 0, n = 0;
 

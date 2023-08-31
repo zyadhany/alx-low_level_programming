@@ -13,18 +13,7 @@
  * Return: n power to k
  */
 
-unsigned int _pow(unsigned int n ,unsigned int k)
-{
-	unsigned int i = 0, re = 1;
 
-	for ( i = 0; i < k; i++)
-	{
-		re *= n;
-	}
-
-
-	return (re);
-}
 
 
 
@@ -35,7 +24,7 @@ unsigned int _pow(unsigned int n ,unsigned int k)
  * Return: pointer to list
  */
 
-unsigned int binary_to_uint(const char *s)
+unsigned int binaarfy_to_uint(const char *s)
 {
 	unsigned int k = 0, i = 0, n = 0;
 
