@@ -7,22 +7,26 @@
 /**
  * flip_bits - check the code
  * @n: given binary
- * @k: given index
+ * @m: given index
  *
  * Return: pointer to list
  */
 
-unsigned int flip_bits(unsigned long int n, unsigned long int k)
+unsigned int flip_bits(unsigned long int n, unsigned long int m)
 {
+	unsigned int re = 0;
 
-	if (k > 64)
+	while (n || m)
 	{
-		return (-1);
+		if (n & 1 != m & 1)
+		{
+			re++;
+		}
+		n >>= 1;
+		m >>= 1;
 	}
-	if ((n >> k) & 1)
-	{
-		n -= 3;
-	}
+	
+	
 
-	return (1);
+	return (re);
 }
