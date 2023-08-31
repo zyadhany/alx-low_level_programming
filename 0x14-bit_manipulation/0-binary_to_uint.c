@@ -55,7 +55,7 @@ unsigned int binary_to_uint(const char *s)
 	{
 		if (s[i] == '1')
 		{
-			k += _pow(2,n - i - 1);
+			k += _pow(2, n - i - 1);
 		}
 
 		i++;
