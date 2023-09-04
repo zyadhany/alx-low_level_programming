@@ -22,7 +22,7 @@ int main(int __attribute__((__unused__)) ac, char *av[])
 	fn = open(av[1], O_RDONLY);
 	if (fn == -1)
 	{
-		dprintf(STDERR_FILENO, "Error: Can't read file %s\n", argv[1]);
+		dprintf(STDERR_FILENO, "Error: Can't read file %s\n", av[1]);
 		exit(98);
 	}
 
