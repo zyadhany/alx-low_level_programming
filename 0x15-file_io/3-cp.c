@@ -50,7 +50,7 @@ void closeFile(int file)
 int main(int argc, char *argv[])
 {
 	int fn, fo, r, w;
-	char *buff;
+	char c;
 
 	if (argc != 3)
 	{
@@ -58,31 +58,28 @@ int main(int argc, char *argv[])
 		exit(97);
 	}
 
-	buff = creatBuff(argv[2]);
 	fn = open(argv[1], O_RDONLY);
-	r = read(fn, buff, 1024);
+	r = read(fn, &c, 1);
 	fo = open(argv[2], O_CREAT | O_RDWR | O_TRUNC, 0664);
 
 	do {
 		if (r == -1 || fn == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
-			free(buff);
 			exit(98);
 		}
 
-		w = write(fo, buff, r);
+		w = write(fo, &c, r);
 		if (w == -1 || fo == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
-			free(buff);
 			exit(99);
 		}
-	    r = read(fn, buff, 1024);
+	    r = read(fn, &c, 1);
 		fo = open(argv[2], O_WRONLY | O_APPEND);
 	} while (r > 0);
 
-	free(buff);
+
 	closeFile(fn);
 	closeFile(fo);
 
