@@ -12,7 +12,7 @@
 ssize_t read_textfile(const char *filename, size_t n)
 {
 	FILE *fn;
-	ssize_t k = 0;
+	ssize_t k = 0, w;
 	size_t i;
 	char c, *buff;
 
@@ -33,10 +33,16 @@ ssize_t read_textfile(const char *filename, size_t n)
 		k++;
 	}
 
-	write(1, buff, k);
-
+	w = write(1, buff, k);
 
 	free(buff);
 	fclose(fn);
+
+	if (w != k)
+	{
+		return (0);
+	}
+
+
 	return (k);
 }
