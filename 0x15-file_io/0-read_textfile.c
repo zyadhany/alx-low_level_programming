@@ -31,10 +31,7 @@ ssize_t read_textfile(const char *filename, size_t n)
 		k++;
 	}
 
-	for (j = 0; j < k; j++)
-	{
-		write(1, &buff[j], 1);
-	}
+	write(1, buff, k);
 
 
 	free(buff);
