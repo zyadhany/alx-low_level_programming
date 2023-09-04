@@ -1,6 +1,5 @@
 #include <stdio.h>
 #include <stdlib.h>
-#include "main.h"
 
 
 /**
@@ -58,9 +57,9 @@ int main(int ac, char *av[])
 		exit(97);
 	}
 
+	buff = creatBuff(av[2]);
 	fn = open(av[1], O_RDONLY);
 	fo = open(av[2], O_CREAT | O_RDWR | O_TRUNC, 0664);
-	buff = creatBuff(av[2]);
 	r = read(fn, buff, 1024);
 
 	do {
