@@ -61,10 +61,9 @@ int main(int ac, char **av)
 	fn = open(av[1], O_RDONLY);
 	fo = open(av[2], O_CREAT | O_RDWR | O_TRUNC, 0664);
 	buff = creatBuff(av[2]);
+	r = read(fn, buff, 1024);
 
-	while (r > 0)
-	{
-		r = read(fn, buff, 1024);
+	do {
 		if (r == -1 || fn == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
@@ -79,8 +78,8 @@ int main(int ac, char **av)
 			free(buff);
 			exit(99);
 		}
-		fo = open(av[2], O_WRONLY | O_APPEND);
-	}
+	    r = read(fn, buff, 1024);
+	} while (r > 0);
 
 	free(buff);
 	closeFile(fn);
