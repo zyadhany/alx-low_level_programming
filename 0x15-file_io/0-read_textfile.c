@@ -12,7 +12,7 @@
 ssize_t read_textfile(const char *filename, size_t n)
 {
 	FILE *fn;
-	ssize_t k = 0, j;
+	ssize_t k = 0;
 	size_t i;
 	char c, *buff;
 
