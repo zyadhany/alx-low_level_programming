@@ -11,34 +11,27 @@
 
 ssize_t read_textfile(const char *filename, size_t n)
 {
-	FILE *fn;
-	ssize_t k = 0, w;
+	ssize_t r, w, fn;
 	size_t i;
 	char c, *buff;
 
 
 	if (!filename)
 		return (0);
-	fn = fopen(filename, "r");
-	if (!fn)
+	fn = open(filename, "r");
+	if (fn == -1)
 		return (0);
 	buff = malloc(sizeof(char) * n);
 	if (!buff)
 		return (0);
 
-
-	for (i = 0; i < n && (c = fgetc(fn)) != EOF; i++)
-	{
-		buff[k] = c;
-		k++;
-	}
-
-	w = write(1, buff, k);
+	r = read(fn, buff, n);
+	w = write(1, buff, r);
 
 	free(buff);
-	fclose(fn);
+	close(fn);
 
-	if (w != k)
+	if (r != w)
 	{
 		return (0);
 	}
