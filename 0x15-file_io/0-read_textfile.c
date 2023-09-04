@@ -16,9 +16,11 @@ ssize_t read_textfile(const char *filename, size_t n)
 	size_t i;
 	char c, *buff;
 
-	buff = malloc(sizeof(char) * n);
 
-	if (!filename || !buff)
+	if (!filename)
+		return (0);
+	buff = malloc(sizeof(char) * n);
+	if (!buff)
 		return (0);
 	fn = fopen(filename, "r");
 	if (!fn)
