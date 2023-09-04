@@ -79,6 +79,7 @@ int main(int ac, char **av)
 			free(buff);
 			exit(99);
 		}
+		fo = open(av[2], O_WRONLY | O_APPEND);
 	}
 
 	free(buff);
