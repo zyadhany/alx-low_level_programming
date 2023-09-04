@@ -47,9 +47,9 @@ void closeFile(int file)
  *
  * Return: Always 0.
  */
-int main(int ac, char **av)
+int main(int ac, char *av[])
 {
-	int fn, fo, r = 1, w;
+	int fn, fo, r, w;
 	char *buff;
 
 	if (ac != 3)
