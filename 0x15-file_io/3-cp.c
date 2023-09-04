@@ -15,7 +15,7 @@ char *creatBuff(char *file)
 
 	if (!buff)
 	{
-		dprintf(2, "Error: Can't write to %s\n", file);
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", file);
 		exit(99);
 	}
 
@@ -35,7 +35,7 @@ void closeFile(int file)
 
 	if (n == -1)
 	{
-		dprintf(2, "Error: Can't close fd %d\n", file);
+		dprintf(STDERR_FILENO, "Error: Can't close fd %d\n", file);
 		exit(100);
 	}
 }
@@ -54,7 +54,7 @@ int main(int ac, char **av)
 
 	if (ac != 3)
 	{
-		dprintf(2, "Usage: cp file_from file_to\n");
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 
@@ -67,7 +67,7 @@ int main(int ac, char **av)
 		r = read(fn, buff, 1024);
 		if (r == -1 || fn == -1)
 		{
-			dprintf(2, "Error: Can't read from file %s\n", av[1]);
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
 			free(buff);
 			exit(98);
 		}
@@ -75,7 +75,7 @@ int main(int ac, char **av)
 		w = write(fo, buff, r);
 		if (w == -1 || fo == -1)
 		{
-			dprintf(2, "Error: Can't write to %s\n", av[2]);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
 			free(buff);
 			exit(99);
 		}
