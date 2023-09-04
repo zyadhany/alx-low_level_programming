@@ -16,24 +16,20 @@ int create_file(const char *filename, char *text_content)
 	if (!filename)
 		return (-1);
 
-	if (text_content != NULL)
-		for (n = 0; text_content[n] != '\0'; n++)
-		;
+	if (text_content)
+		for (n = 0; text_content[n] != '\0';)
+			n++;
 
 
 	fn = open(filename, O_CREAT | O_RDWR | O_TRUNC, 0600);
-	if (fn == -1)
-		return (-1);
-
-
 	w = write(fn, text_content, n);
 
-	close(fn);
-	if (w == -1)
+	if (w == -1 || fn == -1)
 	{
 		return (-1);
 	}
 
 
+	close(fn);
 	return (1);
 }
