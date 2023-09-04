@@ -42,31 +42,31 @@ void closeFile(int file)
 
 /**
  * main - check the code
- * @ac: num of arg
- * @av: arr of arg
+ * @argc: num of arg
+ * @argv: arr of arg
  *
  * Return: Always 0.
  */
-int main(int ac, char *av[])
+int main(int argc, char *argv[])
 {
 	int fn, fo, r, w;
 	char *buff;
 
-	if (ac != 3)
+	if (argc != 3)
 	{
 		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
 		exit(97);
 	}
 
-	buff = creatBuff(av[2]);
-	fn = open(av[1], O_RDONLY);
-	fo = open(av[2], O_CREAT | O_RDWR | O_TRUNC, 0664);
+	buff = creatBuff(argv[2]);
+	fn = open(argv[1], O_RDONLY);
 	r = read(fn, buff, 1024);
+	fo = open(argv[2], O_CREAT | O_RDWR | O_TRUNC, 0664);
 
 	do {
 		if (r == -1 || fn == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", av[1]);
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
 			free(buff);
 			exit(98);
 		}
@@ -74,12 +74,12 @@ int main(int ac, char *av[])
 		w = write(fo, buff, r);
 		if (w == -1 || fo == -1)
 		{
-			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", av[2]);
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
 			free(buff);
 			exit(99);
 		}
 	    r = read(fn, buff, 1024);
-		fo = open(av[2], O_WRONLY | O_APPEND);
+		fo = open(argv[2], O_WRONLY | O_APPEND);
 	} while (r > 0);
 
 	free(buff);
