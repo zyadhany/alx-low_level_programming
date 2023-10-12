@@ -4,7 +4,7 @@
 #include "lists.h"
 
 /**
- * dlistint_t - check the code
+ * get_dnodeint_at_index - check the code
  * @head: given list
  * @index: index of list
  *

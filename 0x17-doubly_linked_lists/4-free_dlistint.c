@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * dlistint_t - check the code
+ * free_dlistint - check the code
  * @head: given list
  *
  * Return: free all element of list
