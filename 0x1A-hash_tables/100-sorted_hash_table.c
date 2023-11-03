@@ -32,6 +32,48 @@ shash_table_t *shash_table_create(unsigned long int size)
 }
 
 /**
+ * add_order_list - add element to hash table.
+ * @ht: hast table.
+ * @key: key to add.
+ * @tmp: added node.
+ *
+ * Return: noting.
+ */
+void add_order_list(shash_table_t *ht, const char *key, shash_node_t *tmp)
+{
+	shash_node_t *at;
+
+	if (!ht->shead)
+	{
+		tmp->snext = tmp->sprev = NULL;
+		ht->shead = ht->stail = tmp;
+		return;
+	}
+
+	if (strcmp(ht->shead->key, key) > 0)
+	{
+		tmp->sprev = NULL;
+		tmp->snext = ht->shead;
+		ht->shead->sprev = tmp;
+		ht->shead = tmp;
+		return;
+	}
+
+	at = ht->shead;
+
+	while (at->snext && strcmp(at->snext->key, key) < 0)
+		at = at->snext;
+	tmp->snext = at->snext;
+	tmp->sprev = at;
+	at->snext = tmp;
+
+	if (tmp->snext)
+		tmp->snext->sprev = tmp;
+	else
+		ht->stail = tmp;
+}
+
+/**
  * shash_table_set - add element to hash table.
  * @ht: hast table.
  * @key: key to add.
@@ -42,7 +84,7 @@ shash_table_t *shash_table_create(unsigned long int size)
 int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 {
 	unsigned long int index;
-	shash_node_t *tmp, *at;
+	shash_node_t *tmp;
 
 	if (!ht || !key || !value)
 		return (0);
@@ -79,36 +121,7 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 	}
 	tmp->next = ht->array[index];
 	ht->array[index] = tmp;
-
-	if (!ht->shead)
-	{
-		tmp->snext = tmp->sprev = NULL;
-		ht->shead = ht->stail = tmp;
-		return (1);
-	}
-
-	if (strcmp(ht->shead->key, key) > 0)
-	{
-		tmp->sprev = NULL;
-		tmp->snext = ht->shead;
-		ht->shead->sprev = tmp;
-		ht->shead = tmp;
-		return (1);
-	}
-
-	at = ht->shead;
-
-	while (at->snext && strcmp(at->snext->key, key) < 0)
-		at = at->snext;
-	tmp->snext = at->snext;
-	tmp->sprev = at;
-	at->snext = tmp;
-
-	if (tmp->snext)
-		tmp->snext->sprev = tmp;
-	else
-		ht->stail = tmp;
-
+	add_order_list(ht, key, tmp);
 	return (1);
 }
 
