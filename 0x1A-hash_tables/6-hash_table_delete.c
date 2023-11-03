@@ -25,9 +25,7 @@ void free_list(hash_node_t *node)
  */
 void hash_table_delete(hash_table_t *ht)
 {
-	unsigned long int i, isit = 0;
-	hash_node_t *tmp;
-
+	unsigned long int i;
 
 	if (!ht)
 		return;
