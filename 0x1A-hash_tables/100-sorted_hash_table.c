@@ -175,9 +175,7 @@ void shash_table_print_rev(const shash_table_t *ht)
 	if (!ht)
 		return;
 
-
 	printf("{");
-
 
 	tmp = ht->stail;
 	while (tmp)
@@ -205,7 +203,7 @@ void free_slist(shash_node_t *node)
 
 	free(node->key);
 	free(node->value);
-	free_slist(node->next);
+	free_slist(node->snext);
 	free(node);
 }
 
@@ -217,13 +215,10 @@ void free_slist(shash_node_t *node)
  */
 void shash_table_delete(shash_table_t *ht)
 {
-	unsigned long int i;
-
 	if (!ht)
 		return;
 
-	for (i = 0; i < ht->size; i++)
-		free_slist(ht->array[i]);
+	free_slist(ht->shead);
 	free(ht->array);
 	free(ht);
 }
