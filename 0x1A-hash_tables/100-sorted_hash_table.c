@@ -87,6 +87,15 @@ int shash_table_set(shash_table_t *ht, const char *key, const char *value)
 		return (1);
 	}
 
+	if (strcmp(ht->shead->key, key) > 0)
+	{
+		tmp->sprev = NULL;
+		tmp->snext = ht->shead;
+		ht->shead->sprev = tmp;
+		ht->shead = tmp;
+		return (1);
+	}
+
 	at = ht->shead;
 
 	while (at->snext && strcmp(at->snext->key, key) < 0)
