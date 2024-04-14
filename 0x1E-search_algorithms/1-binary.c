@@ -22,17 +22,22 @@ int binary_search(int *array, size_t size, int value)
 		at = (l + r) / 2;
 
 		printf("Searching in array: ");
-		
+
 		for (i = l; i <= r; i++)
 		{
 			printf("%d", array[i]);
 
-			if (i != r) printf(", ");
-			else printf("\n");
+			if (i != r)
+				printf(", ");
+			else
+				printf("\n");
 		}
-		if (array[at] == value) return (at);
-		else if (array[at] > value) r = at - 1;
-		else l = at + 1;
+		if (array[at] == value)
+			return (at);
+		else if (array[at] > value)
+			r = at - 1;
+		else
+			l = at + 1;
 	}
 
 	return (-1);
