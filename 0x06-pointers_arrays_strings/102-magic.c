@@ -1,14 +1,19 @@
-#include "main.h"
-
+#include <stdio.h>
 
 /**
- * magic - adds two numbers
- * @a: first integer
- * @b: second integer
+ * main - prints a[2] = 98
  *
- * Return: the sum of a and b
+ * Return: Always 0
  */
-int magic(int a, int b)
+int main(void)
 {
-	return (a + b);
+	int n;
+	int a[5];
+	int *p;
+
+	a[2] = 1024;
+	p = &n;
+	p[5] = 98;
+	printf("a[2] = %d\n", a[2]);
+	return (0);
 }
