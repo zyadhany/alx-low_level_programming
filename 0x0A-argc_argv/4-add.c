@@ -12,19 +12,29 @@
  */
 int main(int argc, char *argv[])
 {
-	int num1, num2, result;
+	int i, suma = 0, res = 0;
+	char c[] = "Error", *find_letter;
 
-	if (argc != 3)
+	if (argc > 1)
 	{
-		printf("Error\n");
-		return (1);
+		for (i = 1; i < argc; i++)
+		{
+			find_letter = argv[i];
+			while (*find_letter != 0)
+			{
+				if (*find_letter < 47 || *find_letter > 57)
+				{
+					printf("%s\n", c);
+					return (1);
+				}
+				find_letter++;
+			}
+			res = atoi(argv[i]);
+			suma += res;
+		}
+		printf("%d\n", suma);
 	}
-
-	num1 = atoi(argv[1]);
-	num2 = atoi(argv[2]);
-	result = num1 + num2;
-
-	printf("%d\n", result);
-
+	else
+		printf("%d\n", 0);
 	return (0);
 }
