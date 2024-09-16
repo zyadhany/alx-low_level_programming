@@ -2,6 +2,25 @@
 
 
 /**
+ * _get_len - gets the length of a string
+ * @s: string to get length of
+ *
+ * Return: length of string
+ */
+int _get_len(char *s)
+{
+	if (*s == '\0')
+	{
+		return (0);
+	}
+	else
+	{
+		return (1 + _get_len(s + 1));
+	}
+}
+
+
+/**
  * check_palindrome - checks if a string is a palindrome
  * @s: string to check
  * @len: length of string
@@ -33,12 +52,8 @@ int check_palindrome(char *s, int len)
  */
 int is_palindrome(char *s)
 {
-	int len = 0;
+	int len = _get_len(s);
 
-	while (*(s + len))
-	{
-		len++;
-	}
 	if (len <= 1)
 	{
 		return (1);
