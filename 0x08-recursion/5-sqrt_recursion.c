@@ -4,33 +4,22 @@
 /**
  * get_sqrt - returns the natural square root of a number
  * @n: number to get square root of
- * @low: low end of search range
- * @high: high end of search range
+ * @cnt: low end of search range
  *
  * Return: square root of n
  */
 
-int get_sqrt(int n, int low, int high)
+int get_sqrt(int n, int cnt)
 {
-	int mid;
-
-	if (low <= high)
+	if (cnt * cnt == n)
 	{
-		mid = (low + high) / 2;
-		if (mid * mid == n)
-		{
-			return (mid);
-		}
-		else if (mid * mid < n)
-		{
-			return (get_sqrt(n, mid + 1, high));
-		}
-		else
-		{
-			return (get_sqrt(n, low, mid - 1));
-		}
+		return (cnt);
 	}
-	return (-1);
+	else if (cnt * cnt > n)
+	{
+		return (-1);
+	}
+	return (get_sqrt(n, cnt + 1));
 }
 
 
@@ -42,5 +31,9 @@ int get_sqrt(int n, int low, int high)
  */
 int _sqrt_recursion(int n)
 {
-	return (get_sqrt(n, 0, n));
+	if (n < 0)
+	{
+		return (-1);
+	}
+	return (get_sqrt(n, 1));
 }
