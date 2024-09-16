@@ -8,10 +8,12 @@
  *
  * Return: 0
  */
-int main(int argc, char *argv[])
+int main(injt argc, char *argv[])
 {
-	(void)argv;
+	int i;
 
-	printf("%i\n", argc - 1);
-	return (0);
+	for (i = 0; i < argc; i++)
+	{
+		printf("%s\n", argv[i]);
+	}
 }
