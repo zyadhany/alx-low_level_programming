@@ -1,37 +1,38 @@
-#include<stdio.h>
-#include<stdlib.h>
+#include "3-calc.h"
+#include <stdio.h>
+#include <stdlib.h>
+
 /**
- * main- Entry point
-(* a blank line
- *@argc: the number of parameters.
- *@argv: the parameeters in the case the number ob bytes.
-* Description: this program prints opcodes in hexa)?
-* Return: 0 in succes
-*/
+ * main - check the code
+ * @argc: num orelem
+ * @argv: arrat
+ *
+ * Return: Always 0.
+ */
 int main(int argc, char *argv[])
 {
-	int i, n;
+	int num1, num2, result;
+	int (*op_func)(int, int);
 
-
-	if (argc != 2)
+	if (argc != 4)
 	{
 		printf("Error\n");
-		return (1);
-	}
-	n = atoi(argv[1]);
-	if (n < 0)
-	{
-		printf("Error\n");
-		exit(2);
+		exit(98);
 	}
 
-	for (i = 0; i < n; i++)
+	num1 = atoi(argv[1]);
+	num2 = atoi(argv[3]);
+
+	op_func = get_op_func(argv[2]);
+
+	if (!op_func)
 	{
-		printf("%02hhx", *((char *)main + i));
-		if (i < n - 1)
-			printf(" ");
-		else
-			printf("\n");
+		printf("Error\n");
+		exit(99);
 	}
+
+	result = op_func(num1, num2);
+	printf("%d\n", result);
+
 	return (0);
 }
